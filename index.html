@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Calculator</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Added a link to our external stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<h6>TRIDENTS GIF SEARCH</h6>
+
+
+
+Moses gifs<input id='content'>
+<button id ='search'>search</button>
+
+
+<!-- moses -->
+<iframe src="https://giphy.com/embed/3oz8xu49qNyNPs6LAs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/southparkgifs-3oz8xu49qNyNPs6LAs">via GIPHY</a></p>
+  
+
+
+
+
+
+  <div id ='weather'><div class='gif-view'></div></div>
+ <h2>  </h2>  <h1 id ='first'>To be used for religious gifs <u><i>only!</i></u> </h1>
+
+ 
+
+ <!-- JQuery -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <!-- ================================================================================== -->
+
+ <!-- Firebase Core JavaScript Link -->
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+
+  <!-- Specific Firebase products we want -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+ <script>
+   // Initialize Firebase  WsTb53ehdbsJ2AxgBbgcZJLQqOZ5BAKu
+   // This is the code we copied and pasted from our app page
+   var config = {
+    apiKey: "AIzaSyDbG5HJldkWHtsrBsI89sGfK-AnQnDBucA",
+    authDomain: "tridents-c0791.firebaseapp.com",
+    databaseURL: "https://tridents-c0791.firebaseio.com",
+    projectId: "tridents-c0791",
+    storageBucket: "",
+    messagingSenderId: "603251834523",
+    appId: "1:603251834523:web:b892744cdf65fcdd"
+  };
+
+   firebase.initializeApp(config);
+
+   // Variables
+   // ================================================================================
+
+   // Get a reference to the database service
+   var database = firebase.database();
+
+   // Initializing our click count at 0
+   var clickCounter = 100;
+
+   // Functions
+   // ================================================================================
+    function forever(){
+      setTimeout(function(){ 
+    clickCounter--;
+    database.ref().set({
+       clickCount: clickCounter
+     });
+
+
+     
+    }, 3000);
+    
+    }
+    forever()
+   // On Click
+   $("#click-button").on("click", function() {
+
+     // Add 1 to clickCounter
+     clickCounter++;
+
+     // **** Store Click Data to Firebase in a JSON property called clickCount *****
+     // **** Note how we are using the Firebase .set() method ****
+     // **** .ref() refers to the path you want to save your data to
+     // **** Since we left .ref() blank, it will save to the root directory
+     database.ref().set({
+       clickCount: clickCounter
+     });
+
+     // Now! go to https://fir-click-counter-7cdb9.firebaseio.com/ to see the impact to the DB
+   });
+ </script>
+
+
+</body>
+<footer>
+<script src="js.js"></script>
+
+</script>
+
+</footer>
+</html>

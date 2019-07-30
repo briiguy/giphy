@@ -1,0 +1,36 @@
+/* Select all spans that are immediate children of buttons */
+button > span {
+    font-size: 2.5rem;
+}
+body{
+    font-family: cursive;
+}
+*{
+    font-family: monospace,Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    color:grey;
+  
+}
+*:active{
+ 
+}
+img{
+    /* float: left; */
+}
+body{
+    background-color: rgb(29, 29, 29);
+    animation-name: colors;
+    animation-duration: 10s;
+    animation-iteration-count:infinite;
+    position:relative;
+    
+}
+@keyframes colors {
+    0% {background-color:white;
+        }
+
+    50% {background-color: teal;
+       }
+
+    100% {background-color: white;
+        }
+  }
