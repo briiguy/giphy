@@ -1,13 +1,4 @@
 
-//api query
-
-
-// black people hahahahah
-//lolololo yeaaah  ok
-//   char
-// 
-
-
 
     $('#search').click(
 
